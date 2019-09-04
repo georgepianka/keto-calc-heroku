@@ -21,15 +21,12 @@ This is a Rails App made by George Pianka for Flatiron School Final Project Sect
 
 ## Local Deployment
 
-#### 1. HTTP
-`$ rails s`
-##### *The Standard Rails server boots without SSL in development mode*
-##### *Facebook automatically allows http://localhost REDIRECTS in Development Mode so OmniAuth Login will work*
-##### *Navigate to http://localhost:3000/ after Setting Up Facebook OmniAuth as per https://github.com/mkdynamic/omniauth-facebook.*
-#### 2. HTTPS (SSL)
-`$ thin start --ssl`
-##### *Create a self-signed certificate and Uncomment `config.force_ssl = true` in application.rb*
-##### *-or- Navigate to https://localhost:3000/ and Proceed Past NET::ERR_CERT_AUTHORITY_INVALID*
+#### Start Client and API Servers
+`$ rake start`
+##### *Executes Foreman, running Procfile.dev*
+##### *The Client App Boots at http://localhost:3000.*
+##### *The API Server Listens at https://localhost:3001.*
+##### *Hitting CTRL+C kills both processes together.*
 
 ---
 
