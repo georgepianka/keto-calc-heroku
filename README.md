@@ -1,7 +1,8 @@
 # Keto Calc
 ### Calculate Net Carbs / Track Keto Diet Progress
 
-This is a Rails App made by George Pianka for Flatiron School Final Project Section 3 (Ruby/Rails). The application allows the user to create, store, share, and rate Recipes, while easily generating Grocery Lists from Recipes they add to their Menu of Dishes. Users can recommend Healthy Ingredient Substitutions, Create a Menu of Dishes for the Week, and Like Recipes so other users can Find a New Favorite.
+This is a Rails App made by George Pianka for Flatiron School Final Project Section 4 (React/Rails). The application allows the user to calculate, log, and track Net Carbs while following a Ketogenic Diet. Nutrition Data is provided by Nutritionix via their API. Users can store their daily entries for Net Carbs and Calories via a database search or manual entry. Users may also enter their daily Weight so they can chart their progress against the metrics of Ketosis. [*See Details at Bottom of README*]
+
 ---
 
 ## Setting Up
@@ -44,3 +45,13 @@ This project is intended to be a safe, welcoming space for collaboration, and co
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+---
+
+## Ketogenic Diet Info
+
+Ketosis is a natural metabolic state in which the body begins to burn fat for energy by converting it to ketones in the liver when glycogen stores are depleted.
+
+The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restricting Carbohydrates.
+
+### Deplete Glycogen => Process Fats => Produce Ketones
