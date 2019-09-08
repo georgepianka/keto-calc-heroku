@@ -1,3 +1,7 @@
+### HTTPS
+.env > HTTPS=true
+
+
 ## Credentials
 
 By default, fetch won't send or receive any cookies from the server, resulting in unauthenticated requests if the site relies on maintaining a user session (to send cookies, the credentials init option must be set).
