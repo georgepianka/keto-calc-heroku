@@ -60,10 +60,9 @@ The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restrict
 ### Classic Keto Diet:
 #### 70% Fat, 20% Protein, 10% Carbs
 #### 4:1 Ratio of Fat to Protein/Carbs
-#### Net Carbs between 20 - 50 grams  
+#### Net Carbs between 20 - 50 grams
 
-
->#### __Net Carbs__ = Total Carbohydrates - Fiber - Indigestible Sugar Alcohol
+---
 
 
 ### Net Carbs
@@ -73,6 +72,8 @@ The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restrict
 - Fiber is a type of carbohydrate from plants that the body cannot process.  
 
 - Sugar alcohols like Xylitol and Erythritol have a molecular structure that differs enough from sugar to make them almost entirely indigestible.
+
+- ##### Net Carbs = Total Carbohydrates - Fiber - Indigestible Sugar Alcohol
 
 ### Protein
 
