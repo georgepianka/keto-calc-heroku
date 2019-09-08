@@ -61,11 +61,15 @@ The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restrict
 #### 70% Fat, 20% Protein, 10% Carbs
 #### 4:1 Ratio of Fat to Protein/Carbs
 #### Net Carbs between 20 - 50 grams  
-> __Net Carbs__ are digestible carbohydrates used for energy, like starches and sugars.  
+
+
+>#### __Net Carbs__ = Total Carbohydrates - Fiber - Indigestible Sugar Alcohol
+
 
 ### Net Carbs
-#### Total Carbohydrates - Fiber - Indigestable Sugar Alcohol
-<br />
+
+- Net Carbs are digestible carbohydrates used for energy, like starches and sugars.
+
 - Fiber is a type of carbohydrate from plants that the body cannot process.  
 
 - Sugar alcohols like Xylitol and Erythritol have a molecular structure that differs enough from sugar to make them almost entirely indigestible.
@@ -73,15 +77,19 @@ The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restrict
 ### Protein
 
 - When the body consumes excess protein, some of the amino acids are turned into glucose via gluconeogenesis.
+
 - The target range is 0.7–0.9 grams of protein per pound of body weight.
 
 ### Testing Ketosis
 - Track Ketones via a Blood Ketone Meter.
+
 - Determine if you are in Ketosis via Urine Sticks (yes/no without an accurate measure of blood ketones).
+
 - Establish Maximum Net Carbs by first eating less than 35 grams of Net Carbs (20-50 gram range), verifying Ketosis via a ketone meter, and slowly increasing Carbohydrate consumption by 5 grams each day.
 
 ### Electrolytes
 - Since insulin levels remain lower during Ketogenesis due to lack of carbohydrates, the body excretes more water along with essential electrolytes like Sodium, Potassium, Calcium, and Magnesium.
+
 - Increase intake of these electrolytes through diet or other supplementation.
 
 #####  *** Disclaimer
