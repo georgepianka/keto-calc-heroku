@@ -55,14 +55,13 @@ Ketosis is a natural metabolic state in which the body begins to burn fat for en
 The Ketogenic Diet, Keto, intentionally induces Ketosis via principally restricting Carbohydrates.
 
 ##### Deplete Glycogen ==> Process Fats ==> Produce Ketones
---
+---
 
 ### Classic Keto Diet:
 #### 70% Fat, 20% Protein, 10% Carbs
 #### 4:1 Ratio of Fat to Protein/Carbs
 #### Net Carbs between 20 - 50 grams  
-<br/>
-*** __Net Carbs__ are digestible carbohydrates used for energy, like starches and sugars.  
+> __Net Carbs__ are digestible carbohydrates used for energy, like starches and sugars.  
 
 ### Net Carbs
 #### Total Carbohydrates - Fiber - Indigestable Sugar Alcohol
