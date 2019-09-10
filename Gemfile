@@ -3,6 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.1'
 
+gem 'dotenv-rails'
+gem 'faraday'
+
+
+gem 'fast_jsonapi'
+
+
 gem 'foreman'
 gem 'nokogiri' , '>= 1.10.4'
 

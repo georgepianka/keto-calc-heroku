@@ -25,7 +25,7 @@ This is a Rails App made by George Pianka for Flatiron School Final Project Sect
 #### Start Client and API Servers
 `$ rake start`
 ##### *Executes Foreman, running Procfile.dev*
-##### *The Client App Boots at http://localhost:3000.*
+##### *The Client App Boots at https://localhost:3000.*
 ##### *The API Server Listens at https://localhost:3001.*
 ##### *Hitting CTRL+C kills both processes together.*
 
