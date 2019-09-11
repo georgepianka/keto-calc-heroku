@@ -15,6 +15,7 @@ import {
     Button
 } from 'reactstrap';
 import EntryCalendar from './components/EntryCalendar'
+import { events } from './events'
 
 class App extends Component {
     constructor(props) {
@@ -65,7 +66,7 @@ class App extends Component {
                                 </p>
                             </Col>
                         </Row>
-                        < EntryCalendar />
+                        < EntryCalendar events = {events} />
                     </Container>
                 </Jumbotron>
 

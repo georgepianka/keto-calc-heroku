@@ -4,7 +4,8 @@ export const events = [
   { title: "NetCarbs: 20",
     allDay: true,
     start: new Date(moment()),
-    end: new Date(moment())
+    end: new Date(moment()),
+    id: 2
   },
 
   { title: "Calories: 1500",
