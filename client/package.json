@@ -6,6 +6,7 @@
     "bootstrap": "^4.3.1",
     "canvasjs": "^1.8.1",
     "http-proxy-middleware": "^0.20.0",
+    "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-big-calendar": "^0.22.0",
     "react-dom": "^16.9.0",

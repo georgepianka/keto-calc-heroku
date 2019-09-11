@@ -14,6 +14,7 @@ import {
     Jumbotron,
     Button
 } from 'reactstrap';
+import EntryCalendar from './components/EntryCalendar'
 
 class App extends Component {
     constructor(props) {
@@ -38,7 +39,7 @@ class App extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink href="/components/">Components</NavLink>
+                                <NavLink href="/components" activeStyle={{fontSize: '20px'}}>Components</NavLink>
                             </NavItem>
                             <NavItem>
                                 <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
@@ -64,9 +65,14 @@ class App extends Component {
                                 </p>
                             </Col>
                         </Row>
+                        < EntryCalendar />
                     </Container>
                 </Jumbotron>
+
             </div>
+
+
+
         );
     }
 }
