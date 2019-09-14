@@ -1,6 +1,7 @@
 
 import React, { Component } from 'react';
 import {
+    Input,
     Collapse,
     Navbar,
     NavbarToggler,
@@ -15,7 +16,10 @@ import {
     Button
 } from 'reactstrap';
 import EntryCalendar from './components/EntryCalendar'
+import SplineGraph from './components/SplineGraph'
 import { events } from './events'
+import { dataPoints } from './dataPoints'
+import moment from 'moment'
 
 class App extends Component {
     constructor(props) {
@@ -23,7 +27,8 @@ class App extends Component {
 
         this.toggle = this.toggle.bind(this);
         this.state = {
-            isOpen: false
+            isOpen: false,
+            date: moment().toDate()
         };
     }
     toggle() {
@@ -31,6 +36,11 @@ class App extends Component {
             isOpen: !this.state.isOpen
         });
     }
+
+    handleChange = e => {
+  this.setState({
+    date: e.target.value})
+}
     render() {
         return (
             <div>
@@ -64,11 +74,26 @@ class App extends Component {
                                         View Reactstrap Docs
                                     </Button>
                                 </p>
-                            </Col>
-                        </Row>
+
                         < EntryCalendar events = {events} />
+                        < SplineGraph dataPoints = {dataPoints} />
+                        </Col>
+                        </Row>
+                        <Row>
+                        <Input
+                          id="dob"
+                          type="date"
+                          value={this.state.date}
+                          onChange={this.handleChange}
+                          //onBlur={handleBlur}
+                          className="form-control mt-2"
+                        />
+                        </Row>
+
                     </Container>
+
                 </Jumbotron>
+
 
             </div>
 
