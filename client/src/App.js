@@ -20,6 +20,7 @@ import SplineGraph from './components/SplineGraph'
 import { events } from './events'
 import { dataPoints } from './dataPoints'
 import moment from 'moment'
+import ketoCalc from './assets/ketocalc.jpg'
 
 class App extends Component {
     constructor(props) {
@@ -45,7 +46,10 @@ class App extends Component {
         return (
             <div>
                 <Navbar color="inverse" light expand="md">
-                    <NavbarBrand href="/">reactstrap</NavbarBrand>
+                    <NavbarBrand type="image" href="/">
+                    Home
+                    <img src={ketoCalc} className="Welcome" alt="KetoCalc" style={{width: 100, height: 100, float: 'none', alignSelf: 'center'}}/>
+                    </NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
                         <Nav className="ml-auto" navbar>
