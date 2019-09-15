@@ -45,8 +45,8 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Navbar color="inverse" light expand="md">
-                    <NavbarBrand type="image" href="/">
+                <Navbar className="bg-primary" color="inverse" light expand="md">
+                    <NavbarBrand href="/">
                     Home
                     <img src={ketoCalc} className="Welcome" alt="KetoCalc" style={{width: 100, height: 100, float: 'none', alignSelf: 'center'}}/>
                     </NavbarBrand>
