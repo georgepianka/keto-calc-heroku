@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :entries
+  has_many :days
+  has_many :entries, through: :days
+
   validates_presence_of :username, :email
   validates_uniqueness_of :username, :email
 
