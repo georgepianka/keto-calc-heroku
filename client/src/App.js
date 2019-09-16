@@ -17,6 +17,7 @@ import {
 } from 'reactstrap';
 import EntryCalendar from './components/EntryCalendar'
 import SplineGraph from './components/SplineGraph'
+import SideBar from './components/SideBar'
 import { events } from './events'
 import { dataPoints } from './dataPoints'
 import moment from 'moment'
@@ -92,6 +93,7 @@ class App extends Component {
                           //onBlur={handleBlur}
                           className="form-control mt-2"
                         />
+                        < SideBar />
                         </Row>
 
                     </Container>
