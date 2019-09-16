@@ -6,6 +6,7 @@ ruby '2.6.1'
 gem 'dotenv-rails'
 gem 'faraday'
 
+gem 'bcrypt'
 
 gem 'fast_jsonapi'
 
