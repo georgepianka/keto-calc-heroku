@@ -3,12 +3,12 @@ class ApplicationController < ActionController::API
 
 
 
-    def current_user
-      User.find_by(id: session[:user_id])
+    def logged_in?
+    !!current_user
     end
 
-    def logged_in?
-      !!current_user
+    def current_user
+    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] # only make the db call if there is in fact a sesion at the moment
     end
 
 end

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :entries
       resources :users
+      resources :days
 
     end
   end
