@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(email: "user@email.com", username: "User", password: "password")
+
+Day.create(user_id: 1, date: Date.strptime('09/22/2019', '%m/%d/%Y'), weight: 185)
+Day.create(user_id: 1, date: Date.strptime('09/20/2019', '%m/%d/%Y'), weight: 189)
+
+Entry.create(day_id: 1, net_carbs: 5, calories: 200, protein: 5, fat: 15)
+Entry.create(day_id: 1, net_carbs: 6, calories: 300, protein: 6, fat: 16)
+Entry.create(day_id: 1, net_carbs: 7, calories: 400, protein: 7, fat: 17)
+
+Entry.create(day_id: 2, net_carbs: 10, calories: 250, fat: 15)
+Entry.create(day_id: 2, net_carbs: 12, calories: 350, protein: 6)
+Entry.create(day_id: 2, net_carbs: 14, calories: 450, protein: 7, fat: 17)
