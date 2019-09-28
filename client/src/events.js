@@ -1,10 +1,12 @@
 import moment from "moment";
 
+// moment('2017-06-10T16:08:00').format('MM/DD/YYYY')
+
 export const events = [
   { title: "NetCarbs: 20",
     allDay: true,
-    start: new Date(moment()),
-    end: new Date(moment()),
+    start: new Date(moment("09/25/19")),
+    end: new Date(moment("09/25/19")),
     id: 2
   },
 
