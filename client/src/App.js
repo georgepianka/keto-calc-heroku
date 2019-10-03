@@ -13,9 +13,9 @@ import {
     Row,
     Col,
     Jumbotron,
-    Button,
-    Tooltip
+    Button
 } from 'reactstrap';
+import FlipMove from "react-flip-move";
 import EntryCalendar from './components/EntryCalendar'
 import SplineGraph from './components/SplineGraph'
 import SideBar from './components/SideBar'
