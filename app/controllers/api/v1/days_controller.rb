@@ -19,7 +19,7 @@ class Api::V1::DaysController < ApplicationController
   def create
     @day = current_user.days.build(day_params)
     if @day.save
-      render json: DaysSerializer.new(@day), status: :created
+      render json: DaySerializer.new(@day), status: :created
     else
       resp = {
         error: @day.errors.full_messages.to_sentence
@@ -32,16 +32,19 @@ class Api::V1::DaysController < ApplicationController
     if @day.update(day_params)
       render json: DaySerializer.new(@day), status: :ok
     else
-      render json: @day.errors, status: :unprocessable_entity
+      resp = {
+        error: @day.errors.full_messages.to_sentence
+      }
+      render json: resp, status: :unprocessable_entity
     end
   end
 
   def destroy
     if @day.destroy
-      render json: { data: "day deleted from favs" }, status: :ok
+      render json: { data: "Day deleted!" }, status: :ok
     else
       error_resp = {
-        error: "day not found"
+        error: "Day not found!"
       }
       render json: error_resp, status: :unprocessable_entity
     end
