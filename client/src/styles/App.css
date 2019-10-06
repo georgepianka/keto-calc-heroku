@@ -1,7 +1,10 @@
 .bg {
-   background-image: linear-gradient(black, transparent), url(ketocalcBackground.jpg);
+  background-image: #0f2027; /* fallback for old browsers */
+  background-image: -webkit-linear-gradient(#0f2027, transparent), url(KetoCalcBackground.jpg); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(#0f2027, transparent, transparent), url(KetoCalcBackground.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   /*background-image: linear-gradient(black, transparent), url(KetoCalcBackground.jpg);*/
    height: 100%;
-   background-position: center;
+   background-position: top;
    background-size: cover;
    background-repeat: no-repeat;
    overflow: scroll;
