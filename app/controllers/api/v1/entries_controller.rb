@@ -20,7 +20,9 @@ class Api::V1::EntriesController < ApplicationController
   def create
     @entry = @day.entries.build(entry_params)
     if @entry.save
-      render json: DaySerializer.new(@day), status: :created
+      options = {}
+      options[:include] = [:entries]
+      render json: DaySerializer.new(@day, options), status: :created
     else
       resp = {
         error: @entry.errors.full_messages.to_sentence
@@ -42,7 +44,9 @@ class Api::V1::EntriesController < ApplicationController
 
   def destroy
     if @entry.destroy
-      render json: DaySerializer.new(@day), status: :ok
+      options = {}
+      options[:include] = [:entries]
+      render json: DaySerializer.new(@day, options), status: :ok
     else
       resp = {
         error: "Entry not found!"
