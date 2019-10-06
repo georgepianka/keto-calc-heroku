@@ -5,6 +5,9 @@
    background-size: cover;
    background-repeat: no-repeat;
    overflow: scroll;
+   display: flex;
+   justify-content: flex;
+   flex-direction: column
  }
 
 .App {

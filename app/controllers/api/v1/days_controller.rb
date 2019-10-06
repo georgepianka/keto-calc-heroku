@@ -4,7 +4,7 @@ class Api::V1::DaysController < ApplicationController
   def index
     if logged_in?
       @days = current_user.days
-      render json: DaysSerializer.new(@days)
+      render json: DaySerializer.new(@days)
     else
       render json: {
         error: "Please Sign-Up or Log-In"
@@ -17,7 +17,7 @@ class Api::V1::DaysController < ApplicationController
   end
 
   def create
-    @day = current_user.days.build(place_params)
+    @day = current_user.days.build(day_params)
     if @day.save
       render json: DaysSerializer.new(@day), status: :created
     else
