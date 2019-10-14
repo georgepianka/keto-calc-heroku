@@ -1,7 +1,7 @@
 # Keto Calc
 ### Calculate Net Carbs / Track Keto Diet Progress
 
-This is a Rails App made by George Pianka for Flatiron School Final Project Section 4 (React/Rails). The application allows the user to calculate, log, and track Net Carbs while following a Ketogenic Diet. Nutrition Data is provided by Nutritionix via their API. Users can store their daily entries for Net Carbs and Calories (plus Protein/Fat) via a database search or manual entry. Users may also enter their daily Weight so they can chart their progress against the metrics of Ketosis. [*See Details at Bottom of README*]
+This is a React/Rails App made by George Pianka for Flatiron School Final Project Section 5 (React/Rails). The application allows the user to calculate, log, and track Net Carbs while following a Ketogenic Diet. It features a Client-API Login Flow with Facebook Oath and User Authentication via http(s)-only session cookies with same-origin policy. Nutrition Data is provided by Nutritionix via their API. Users can store their daily entries for Net Carbs and Calories (plus Protein/Fat) via a database search or manual entry. Users may also enter their daily Weight so they can chart their progress against the metrics of Ketosis. [*See Details at Bottom of README*]
 
 ---
 
