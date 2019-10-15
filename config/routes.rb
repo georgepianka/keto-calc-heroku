@@ -7,6 +7,11 @@ Rails.application.routes.draw do
   #get 'api/v1/auth/facebook/callback' => 'api/v1/sessions#create'
   post 'api/v1/auth/facebook_login' => 'api/v1/sessions#authenticate_facebook_user'
 
+  #React-Router and Heroku Deployment: create a ‘fallback route’ for all routes or paths that don’t match or are not included in your client’s routes.
+  get '*path', to: "application#fallback_index_html", constraints: ->(request) do
+    !request.xhr? && request.format.html?
+  end
+
   namespace :api do
     namespace :v1 do
       resources :entries

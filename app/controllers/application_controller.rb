@@ -11,4 +11,8 @@ class ApplicationController < ActionController::API
     @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id] # only make the db call if there is in fact a session at the moment
     end
 
+    def fallback_index_html
+    render :file => 'public/index.html'
+    end
+
 end
