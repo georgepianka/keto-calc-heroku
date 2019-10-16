@@ -1,6 +1,39 @@
 ### HTTPS
 .env > HTTPS=true
 
+## Facebook SDK
+
+<!--  <script>
+window.fbAsyncInit = function () {
+  FB.init({
+    appId: '511637662713939',
+    autoLogAppEvents: true,
+    xfbml: true,
+    version: 'v2.11'
+  });
+
+  // Broadcast an event when FB object is ready
+  var fbInitEvent = new Event('FBObjectReady');
+  document.dispatchEvent(fbInitEvent);
+};
+
+(function (d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) { return; }
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>  -->
+
+<!--
+<div id="fb-root"></div>
+
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0&appId=511637662713939&autoLogAppEvents=1"></script>
+
+-->
+
 
 ## Credentials
 
