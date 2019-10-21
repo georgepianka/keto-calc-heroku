@@ -93,34 +93,38 @@ class App extends Component {
         return (
           <div className="bg">
             <div className="App">
-                { loggedIn ? <NavBar toggle={this.toggle}/> : <Welcome/> }
-                <Jumbotron style={{backgroundColor: "transparent"}}>
-                    <Container>
-                        <Row>
-                        <Col>
-                        < EntryCalendar events = {events} />
-                        < SplineGraph dataPoints = {dataPoints} />
-                        </Col>
-                        </Row>
-                        <Row>
-                        <Input
-                          id="dob"
-                          type="date"
-                          value={this.state.date}
-                          onChange={this.handleChange}
-                          //onBlur={handleBlur}
-                          className="form-control mt-2"
-                        />
-                        < SideBar />
-                        </Row>
-
-                    </Container>
-
-                </Jumbotron>
+                { loggedIn ? <NavBar isOpen={this.state.isOpen} toggle={this.toggle}/> : <Welcome/> }
 
 
-            </div>
-          </div>
+                        { loggedIn ?
+                          <Container><Row><Col>
+                            < EntryCalendar events = {events} />
+                            < SplineGraph dataPoints = {dataPoints} />
+                          </Col></Row></Container> : null  }
+
+                          </div>
+
+
+                          {/*
+                          <Input
+                            id="dob"
+                            type="date"
+                            value={this.state.date}
+                            onChange={this.handleChange}
+                            //onBlur={handleBlur}
+                            className="form-control mt-2"
+                          />
+                          < SideBar />
+                          */}
+                        </div>
+
+
+
+
+
+
+
+
 
 
 

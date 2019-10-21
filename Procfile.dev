@@ -1,2 +1,2 @@
-web: npm start --prefix client
+web: cd client && PORT=3000 npm start
 api: bundle exec thin start --ssl -p 3001
