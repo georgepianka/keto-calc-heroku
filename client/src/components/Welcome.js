@@ -8,8 +8,8 @@ import {
 } from 'reactstrap';
 
   const Welcome = () => (
-   <div>
-    <div className="info text-center">
+   <div className="m-3">
+    <div className="info">
       <h1 className="display-5 font-weight-bold">Keto Calc</h1>
       <img src={ketoCalc} className="d-block mx-auto my-3" alt="KetoCalc" style={{width: 100, height: 100, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
       <h4 className="mb-4 font-weight-light">Keeping You In Ketosis</h4>
@@ -21,9 +21,9 @@ import {
         <FacebookLoginBtn />
 
    </div>
-
-   <Jumbotron style={{backgroundColor: "rgba(15, 32, 39, 0.8)"}}>
-   <h3 className="display-5 mb-5 font-weight-light text-light"> Calculate | Log | Track </h3>
+   <div className="flex-row">
+   <Jumbotron className="d-inline-block p-5" style={{maxWidth: 800, backgroundColor: "rgba(15, 32, 39, 0.8)"}}>
+   <h3 className="display-5 mb-5 font-weight-light text-light text-center"> Calculate | Log | Track </h3>
    <h5 className="mb-3 font-weight-light text-light text-left">
    <ul style={{listStyleType: "square"}}>
     <li className="my-3">Keto Calc lets you Calculate, Log, and Track Net Carbs while on a Ketogenic Diet.</li>
@@ -32,8 +32,11 @@ import {
   </ul>
    </h5>
    </Jumbotron>
+  </div>
 
-   <Jumbotron style={{backgroundColor: "rgba(17, 28, 33, 0.9)"}}>
+  <div><p className="display-3 text-info"><i class="fa fa-angle-double-down" aria-hidden="true"></i></p></div>
+
+   <Jumbotron className="flex-row mt-5" style={{backgroundColor: "rgba(17, 28, 33, 0.9)"}}>
    <h3 className=" display-5 mb-3 font-weight-light text-light"> Ketogenic Diet Info </h3>
    <h5 className="mb-3 font-weight-light text-light text-left">
    <ul style={{listStyleType: "none"}}>
@@ -91,17 +94,15 @@ import {
    </Jumbotron>
 
 
-
-
-
-
-
-   .
-
-   #####  *** Disclaimer
-   *All the information presented in this README is for educational purposes only.
-   You should consult your physician or other health care professional before starting any diet to determine if it is right for your needs.*
    </div>
+
+
+
+
+
+
+
+
 
  );
 
