@@ -17,10 +17,15 @@ import {
 } from 'reactstrap';
 import FlipMove from "react-flip-move";
 import EntryCalendar from './components/EntryCalendar'
+import NavBar from './components/NavBar'
+import Welcome from './components/Welcome'
 import SplineGraph from './components/SplineGraph'
 import SideBar from './components/SideBar'
 import { events } from './events'
 import { dataPoints } from './dataPoints'
+import { getCurrentUser, facebookLogin } from './actions/currentUser';
+import { Route, Switch, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux';
 import moment from 'moment'
 import ketoCalc from './styles/ketocalc.jpg'
 import './styles/App.css';
@@ -28,65 +33,71 @@ import './styles/App.css';
 class App extends Component {
     constructor(props) {
         super(props);
-
-        this.toggle = this.toggle.bind(this);
         this.state = {
             isOpen: false,
-            date: moment().toDate()
         };
     }
-    toggle() {
+
+    componentDidMount() {
+      this.facebookAuthorization();
+      this.props.getCurrentUser();
+    }
+
+    toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen
         });
     }
 
-    handleChange = e => {
-  this.setState({
-    date: e.target.value})
-}
+    facebookAuthorization = () => {
+      let self = this;
+      let scriptTag = document.createElement('script');
+      scriptTag.type = 'text/javascript';
+      scriptTag.src = process.env.REACT_APP_FACEBOOK_AUTH_PATH;
+      scriptTag.addEventListener('load', e => {
+        // This subscribe the callback when login status change
+        // Full list of events is here
+        // https://developers.facebook.com/docs/reference/javascript/FB.Event.subscribe/v2.9
+
+
+
+
+        window.FB.Event.subscribe('auth.statusChange', self.onSuccess);
+      });
+
+      document.body.appendChild(scriptTag);
+
+    }
+
+    onSuccess = (response) => {
+          if (response.status === 'connected') {
+            console.log(response.authResponse)
+            const { accessToken, userID } = response.authResponse;
+            this.props.facebookLogin(accessToken, userID, this.props.history);
+            console.log("Connected to Facebook");
+          } else {
+            window.FB.XFBML.parse();
+            //This function parses and renders XFBML markup in a document on the fly.
+            //Reloads Button When window.FB.logout(); in Logout Component is called.
+            console.log("Not Connected to Facebook")
+          }
+        }
+
+
+
+
+
     render() {
+
+      const { loggedIn } = this.props
         return (
           <div className="bg">
             <div className="App">
-                <Navbar style={{backgroundColor:"#62DDBD"}} light expand="md">
-                    <NavbarBrand style={{color:"royalblue"}} href="/">
-
-                    <img src={ketoCalc} className="Welcome" alt="KetoCalc" style={{width: 50, height: 50, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
-                    KetoCalc
-                    </NavbarBrand>
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" navbar>
-                            <NavItem>
-                                <NavLink className="btn btn-primary btn-sm border border-muted text-light" href="/" activeStyle={{fontSize: '20px'}}>Log Day</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="btn btn-info btn-sm border border-muted text-light" href="/" activeStyle={{fontSize: '20px'}}>View Graph</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="btn btn-secondary btn-sm border border-muted" href="https://github.com/reactstrap/reactstrap">Sign Out</NavLink>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Navbar>
+                { loggedIn ? <NavBar toggle={this.toggle}/> : <Welcome/> }
                 <Jumbotron style={{backgroundColor: "transparent"}}>
                     <Container>
                         <Row>
-                            <Col>
-                                <h1>Welcome to React</h1>
-                                <p>
-                                    <Button
-                                        tag="a"
-                                        color="success"
-                                        size="large"
-                                        href="http://reactstrap.github.io"
-                                        target="_blank"
-                                    >
-                                        View Reactstrap Docs
-                                    </Button>
-                                </p>
-
+                        <Col>
                         < EntryCalendar events = {events} />
                         < SplineGraph dataPoints = {dataPoints} />
                         </Col>
@@ -117,4 +128,12 @@ class App extends Component {
     }
 }
 
-export default App;
+
+const mapStateToProps = (state) => {
+
+  return ({
+    loggedIn: !!state.currentUser,
+  })
+}
+
+export default withRouter(connect(mapStateToProps,{ getCurrentUser, facebookLogin })(App));

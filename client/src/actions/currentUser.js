@@ -1,4 +1,4 @@
-import { otherAction } from "./otherAction.js";
+//import { otherAction } from "./otherAction.js";
 
 
 const headers = {
@@ -50,7 +50,7 @@ export const login = (credentials, history ) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(otherAction())
+          //dispatch(otherAction())
           history.push('/')
         }
       })
@@ -74,7 +74,7 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
-          dispatch(otherAction())
+          //dispatch(otherAction())
           history.push('/')
         }
       })
@@ -97,7 +97,7 @@ export const facebookLogin = (accessToken, userID, history) => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response.data))
-        dispatch(otherAction())
+        //dispatch(otherAction())
         history.push('/')
       }
     })
@@ -111,7 +111,7 @@ export const logout = (history) => {
     }).then(r => r.json())
     .then(response => {
       dispatch(clearCurrentUser())
-      dispatch(otherAction())
+      //dispatch(otherAction())
       history.push('/')
       setTimeout(() => {
         alert(response.notice)

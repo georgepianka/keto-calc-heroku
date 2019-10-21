@@ -2,14 +2,14 @@ import { createStore, applyMiddleware, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 
-import currentUser from './reducers/reducer1'
-import reducer2 from './reducers/reducer2'
+import currentUser from './reducers/currentUser'
+//import reducer2 from './reducers/reducer2'
 
 
 
 const reducer = combineReducers({
   currentUser,
-  reducer2
+  //reducer2
 });
 
 
