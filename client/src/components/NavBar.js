@@ -16,26 +16,27 @@ const NavBar = ({ currentUser, loggedIn, toggle, isOpen }) => {
 
   return (
 
-    <Navbar style={{backgroundColor:"#62DDBD"}} light expand="md">
-        <NavbarBrand style={{color:"royalblue"}} href="/">
-
+    <Navbar className="mb-5" style={{backgroundColor:"rgba(98, 221, 189, .8)"}} light expand="md">
+        <NavbarBrand style={{color:"steelBlue"}}>
+        <NavLink style={{textDecoration: "none" }} exact to="/">
         <img src={ketoCalc} className="Welcome" alt="KetoCalc" style={{width: 50, height: 50, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
         KetoCalc
+        </NavLink>
         </NavbarBrand>
-        <NavItem>
-        { loggedIn ? <h5> Welcome, {currentUser.attributes.username}! </h5> : null}
-        </NavItem>
+
+        { loggedIn ? <NavItem className="btn btn-lg btn-outline-dark"> Welcome, {currentUser.attributes.username}! </NavItem> : null}
+
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
                 <NavItem>
-                    <NavLink className="btn btn-primary btn-sm border border-muted text-light" to="/days/new" activeStyle={{fontSize: '20px'}}>Log Day</NavLink>
+                    <NavLink className="btn btn-primary btn-sm border border-muted text-light" exact to="/days/new" activeStyle={{fontSize: '20px'}}>Log Day</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="btn btn-info btn-sm border border-muted text-light" to="/graph" activeStyle={{fontSize: '20px'}}>View Graph</NavLink>
+                    <NavLink className="btn btn-info btn-sm border border-muted text-light" exact to="/graph" activeStyle={{fontSize: '20px'}}>View Graph</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="btn btn-secondary btn-sm border border-muted"> {/*{ loggedIn ? <Logout/>: null}*/} Sign Out</NavLink>
+                    <a href="#" className="btn btn-secondary btn-sm border border-muted text-light"> {/*{ loggedIn ? <Logout/>: null}*/} Sign Out</a>
                 </NavItem>
             </Nav>
         </Collapse>
