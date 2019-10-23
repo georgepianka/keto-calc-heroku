@@ -7,8 +7,8 @@ const LogOut = ({ logout, history }) => {
 
   const handleClick = event => {
     event.preventDefault()
+    window.FB.logout()
     logout(history);
-    window.FB.logout();
     }
 
 

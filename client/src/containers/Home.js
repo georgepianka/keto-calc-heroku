@@ -18,11 +18,12 @@ import FlipMove from "react-flip-move";
 import EntryCalendar from '../components/EntryCalendar'
 import NavBar from '../components/NavBar'
 import Welcome from '../components/Welcome'
+import UserForm from '../components/UserForm'
 import SplineGraph from '../components/SplineGraph'
 import SideBar from '../components/SideBar'
 import { events } from '../events'
 import { dataPoints } from '../dataPoints'
-import { getCurrentUser, facebookLogin } from '../actions/currentUser';
+import { getCurrentUser, facebookLogin, login, signup } from '../actions/currentUser';
 import { Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import moment from 'moment'
@@ -75,9 +76,6 @@ class Home extends Component {
             this.props.facebookLogin(accessToken, userID, this.props.history);
             console.log("Connected to Facebook");
           } else {
-            window.FB.XFBML.parse();
-            //This function parses and renders XFBML markup in a document on the fly.
-            //Reloads Button When window.FB.logout(); in Logout Component is called.
             console.log("Not Connected to Facebook")
           }
         }
@@ -90,14 +88,39 @@ class Home extends Component {
       const { loggedIn, currentUser  } = this.props;
         return (
           <div>
-                { loggedIn ? <NavBar currentUser={currentUser} loggedIn={loggedIn} isOpen={this.state.isOpen} toggle={this.toggle}/> : <Welcome/> }
+                { loggedIn ? <NavBar currentUser={currentUser} loggedIn={loggedIn} isOpen={this.state.isOpen} toggle={this.toggle}/> : null }
 
 
-                        {loggedIn ?
-                          <Container><Row><Col>
-                            < EntryCalendar events = {events} />
-                            < SplineGraph dataPoints = {dataPoints} />
-                          </Col></Row></Container> : null  }
+
+
+                          <Switch>
+
+                          { loggedIn ?
+                            <>
+                            <Route exact path='/' render={props => (
+                              <EntryCalendar events = {events} {...props}/>
+                            )}/>
+                            <Route exact path='/graph' render={props => (
+                              <SplineGraph dataPoints = {dataPoints} {...props}/>
+                            )}/>
+                            </>
+                            :
+                            <>
+                            <Route exact path='/' component={Welcome}/>
+                            <Route exact path='/login' render={props => (
+                              <UserForm isSignup={false} userFormSubmit= {this.props.login} {...props}/>
+                            )}/>
+                            </>
+                          }
+
+
+                          </Switch>
+
+
+
+
+
+
 
 
                           {/*
@@ -112,8 +135,7 @@ class Home extends Component {
                           < SideBar />
                           */}
 
-                          <Switch>
-                          </Switch>
+
                         </div>
 
         );
@@ -130,4 +152,4 @@ const mapStateToProps = (state) => {
 }
 */
 
-export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser}), { getCurrentUser, facebookLogin })(Home));
+export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser}), { getCurrentUser, facebookLogin, login, signup })(Home));

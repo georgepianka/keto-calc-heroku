@@ -1,6 +1,7 @@
 //import { otherAction } from "./otherAction.js";
 
 import { getDays, clearDays } from "./userDays.js"
+import { resetUserForm } from "./userForm.js"
 
 
 const headers = {
@@ -30,7 +31,11 @@ export const getCurrentUser = () => {
       .then(r => r.json())
       .then(response => {
         if (response.error) {
-          alert(response.error)
+
+          setTimeout(() => {
+            alert(response.error)
+          }, 1000)
+
         } else {
           dispatch(setCurrentUser(response.data))
           dispatch(getDays())
@@ -54,7 +59,7 @@ export const login = (credentials, history ) => {
         } else {
           dispatch(setCurrentUser(response.data))
           dispatch(getDays())
-          //dispatch(otherAction())
+          dispatch(resetUserForm())
           history.push('/')
         }
       })
@@ -79,7 +84,7 @@ export const signup = (credentials, history) => {
         } else {
           dispatch(setCurrentUser(response.data))
           dispatch(getDays())
-          //dispatch(otherAction())
+          dispatch(resetUserForm())
           history.push('/')
         }
       })
@@ -120,6 +125,11 @@ export const logout = (history) => {
       dispatch(clearDays())
       //dispatch(otherAction())
       history.push('/')
+      
+      window.FB.getAuthResponse()
+      window.FB.XFBML.parse()
+      //This function parses and renders XFBML markup in a document on the fly.
+      //Reloads Button When window.FB.logout(); in Logout Component is called.
       setTimeout(() => {
         alert(response.notice)
       }, 1000)
