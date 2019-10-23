@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import LogOut from './LogOut'
 import ketoCalc from '../styles/ketocalc.jpg'
@@ -45,11 +44,4 @@ const NavBar = ({ currentUser, loggedIn, toggle, isOpen }) => {
   )
 }
 
-const mapStateToProps = ({ currentUser }) => {
-  return {
-    currentUser,
-    loggedIn: !!currentUser
-  }
-}
-
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

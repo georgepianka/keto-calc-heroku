@@ -1,5 +1,7 @@
 //import { otherAction } from "./otherAction.js";
 
+import { getDays, clearDays } from "./indexDays.js"
+
 
 const headers = {
 'Accept': 'application/json',
@@ -31,6 +33,7 @@ export const getCurrentUser = () => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
+          dispatch(getDays())
         }
       })
   }
@@ -50,6 +53,7 @@ export const login = (credentials, history ) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
+          dispatch(getDays())
           //dispatch(otherAction())
           history.push('/')
         }
@@ -74,6 +78,7 @@ export const signup = (credentials, history) => {
           alert(response.error)
         } else {
           dispatch(setCurrentUser(response.data))
+          dispatch(getDays())
           //dispatch(otherAction())
           history.push('/')
         }
@@ -97,6 +102,7 @@ export const facebookLogin = (accessToken, userID, history) => {
         alert(response.error)
       } else {
         dispatch(setCurrentUser(response.data))
+        dispatch(getDays())
         //dispatch(otherAction())
         history.push('/')
       }
@@ -111,6 +117,7 @@ export const logout = (history) => {
     }).then(r => r.json())
     .then(response => {
       dispatch(clearCurrentUser())
+      dispatch(clearDays())
       //dispatch(otherAction())
       history.push('/')
       setTimeout(() => {
