@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { NavLink } from 'react-router-dom'
-//import Logout from './Logout'
+import LogOut from './LogOut'
 import ketoCalc from '../styles/ketocalc.jpg'
 import {
     Navbar,
@@ -17,7 +17,7 @@ const NavBar = ({ currentUser, loggedIn, toggle, isOpen }) => {
   return (
 
     <Navbar className="mb-5" style={{backgroundColor:"rgba(98, 221, 189, .8)"}} light expand="md">
-        <NavbarBrand style={{color:"steelBlue"}}>
+        <NavbarBrand>
         <NavLink style={{textDecoration: "none" }} exact to="/">
         <img src={ketoCalc} className="Welcome" alt="KetoCalc" style={{width: 50, height: 50, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
         KetoCalc
@@ -36,7 +36,7 @@ const NavBar = ({ currentUser, loggedIn, toggle, isOpen }) => {
                     <NavLink className="btn btn-info btn-sm border border-muted text-light" exact to="/graph" activeStyle={{fontSize: '20px'}}>View Graph</NavLink>
                 </NavItem>
                 <NavItem>
-                    <a href="#" className="btn btn-secondary btn-sm border border-muted text-light"> {/*{ loggedIn ? <Logout/>: null}*/} Sign Out</a>
+                  < LogOut />
                 </NavItem>
             </Nav>
         </Collapse>
