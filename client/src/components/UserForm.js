@@ -41,9 +41,9 @@ const UserForm = ( {isSignup, userFormData, updateUserForm, userFormSubmit, hist
         <FormGroup>
           <Input className="form-control-lg" placeholder="Username" type="text" name="username" value={userFormData.username} onChange={handleInputChange}></Input>
         </FormGroup>
-          <Button className="btn-lg" color="success">Signin</Button>
+          <Button className="btn-lg" color="success">SignUp</Button>
           </>
-        : <Button className="btn-lg" color="primary">Login</Button>}
+        : <Button className="btn-lg" color="primary">LogIn</Button>}
 
 
       </Form>

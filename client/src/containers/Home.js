@@ -43,6 +43,14 @@ class Home extends Component {
       this.props.getCurrentUser();
     }
 
+    componentDidUpdate() {
+      if (!this.props.loggedIn) {
+        window.FB.XFBML.parse()
+        //This function parses and renders XFBML markup in a document on the fly.
+        //Reloads Button When window.FB.logout(); in Logout Component is called.
+      }
+    }
+
     toggle = () => {
         this.setState({
             isOpen: !this.state.isOpen

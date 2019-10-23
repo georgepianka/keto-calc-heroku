@@ -85,7 +85,7 @@ import {
     <li className="my-3">
     <dl>
     <dt className="my-2">*** Disclaimer:</dt>
-    <dd><i>All the information presented in this README is for educational purposes only.
+    <dd><i>All the information presented above is for educational purposes only.
     You should consult your physician or other health care professional before starting any diet to determine if it is right for your needs.</i></dd>
     </dl>
     </li>
