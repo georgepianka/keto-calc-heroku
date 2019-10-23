@@ -4,14 +4,16 @@ import logger from 'redux-logger'
 
 import currentUser from './reducers/currentUser'
 //import reducer2 from './reducers/reducer2'
-import indexDays from './reducers/indexDays'
+import userDays from './reducers/userDays'
+import userForm from './reducers/userForm'
 
 
 
 const reducer = combineReducers({
   currentUser,
   //reducer2
-  indexDays
+  userDays,
+  userForm
 });
 
 

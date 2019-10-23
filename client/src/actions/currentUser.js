@@ -1,6 +1,6 @@
 //import { otherAction } from "./otherAction.js";
 
-import { getDays, clearDays } from "./indexDays.js"
+import { getDays, clearDays } from "./userDays.js"
 
 
 const headers = {
