@@ -103,12 +103,18 @@ class Home extends Component {
                             <Route exact path='/graph' render={props => (
                               <SplineGraph dataPoints = {dataPoints} {...props}/>
                             )}/>
+                            <Route exact path="/days/new" render={props => (
+                              <SplineGraph dataPoints = {dataPoints} {...props}/>
+                            )}/>
                             </>
                             :
                             <>
                             <Route exact path='/' component={Welcome}/>
                             <Route exact path='/login' render={props => (
                               <UserForm isSignup={false} userFormSubmit= {this.props.login} {...props}/>
+                            )}/>
+                            <Route exact path='/signup' render={props => (
+                              <UserForm isSignup={true} userFormSubmit= {this.props.signup} {...props}/>
                             )}/>
                             </>
                           }

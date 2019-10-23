@@ -125,14 +125,22 @@ export const logout = (history) => {
       dispatch(clearDays())
       //dispatch(otherAction())
       history.push('/')
-      
-      window.FB.getAuthResponse()
-      window.FB.XFBML.parse()
-      //This function parses and renders XFBML markup in a document on the fly.
-      //Reloads Button When window.FB.logout(); in Logout Component is called.
+      window.FB.getLoginStatus((response) => {
+        if (response.status === 'connected') {
+            window.FB.logout(()=> window.FB.XFBML.parse())
+
+        }
+        else {
+            window.FB.XFBML.parse()
+            //This function parses and renders XFBML markup in a document on the fly.
+            //Reloads Button When window.FB.logout(); in Logout Component is called.
+        }
+
+      })
+
       setTimeout(() => {
         alert(response.notice)
-      }, 1000)
+      }, 1500)
     })
   }
 }
