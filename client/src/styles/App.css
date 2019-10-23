@@ -60,7 +60,7 @@
 
 
 .button-hover:hover span:after {
-  content: 'Log/View';
+  content: 'Log/Edit';
   padding-right: 5px;
   opacity: 1;
 

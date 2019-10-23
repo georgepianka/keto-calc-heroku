@@ -34,7 +34,7 @@ import {
    </Jumbotron>
   </div>
 
-  <div><p className="display-3 text-info"><i class="fa fa-angle-double-down" aria-hidden="true"></i></p></div>
+  <div><p className="display-3 text-primary"><i class="fa fa-angle-double-down" aria-hidden="true"></i></p></div>
 
    <Jumbotron className="flex-row mt-5" style={{backgroundColor: "rgba(17, 28, 33, 0.9)"}}>
    <h3 className=" display-5 mb-3 font-weight-light text-light"> Ketogenic Diet Info </h3>

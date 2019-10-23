@@ -4,12 +4,14 @@ import logger from 'redux-logger'
 
 import currentUser from './reducers/currentUser'
 //import reducer2 from './reducers/reducer2'
+import indexDays from './reducers/indexDays'
 
 
 
 const reducer = combineReducers({
   currentUser,
   //reducer2
+  indexDays
 });
 
 
