@@ -32,10 +32,9 @@ const CustomToolbar = (props) => {
 
 
 const EntryCalendar = ({events}) => (
-
-  <div style={{ height: 800 }}>
+    <div style={{ height: 900, backgroundColor: "snow" }}>
     <Calendar
-      style={{backgroundColor:"snow"}}
+    style={{ height: 800 }}
       startAccessor="start"
       endAccessor="end"
       localizer={localizer}
@@ -75,7 +74,6 @@ const EntryCalendar = ({events}) => (
         (event, start, end, isSelected) => {
           let newStyle = {
             textStyle: 'bold',
-            backgroundColor: "transparent",
             color: "black"
             //marginTop: -2,
             //borderRadius: "0px",
@@ -105,9 +103,11 @@ const EntryCalendar = ({events}) => (
           }
       }*/
 
+
+
       />
 
-  </div>
+</div>
 );
 
 

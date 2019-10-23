@@ -106,7 +106,13 @@ class Home extends Component {
                           { loggedIn ?
                             <>
                             <Route exact path='/' render={props => (
+
+
+                              
                               <EntryCalendar events = {events} {...props}/>
+
+
+
                             )}/>
                             <Route exact path='/graph' render={props => (
                               <SplineGraph dataPoints = {dataPoints} {...props}/>

@@ -14,9 +14,9 @@ import {
       <img src={ketoCalc} className="d-block mx-auto my-3" alt="KetoCalc" style={{width: 100, height: 100, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
       <h4 className="mb-4 font-weight-light">Keeping You In Ketosis</h4>
       <div>
-        <Link className="btn btn-success btn-lg border border-muted text-light mr-2" to="/signup">Sign Up</Link>
+        <Link className="btn btn-success btn-lg border border-muted text-light mr-2" to="/signup">SignUp</Link>
 
-        <Link className="btn btn-primary btn-lg border border-muted text-light ml-2" to="/login">Login</Link>
+        <Link className="btn btn-primary btn-lg border border-muted text-light ml-2" to="/login">LogIn</Link>
       </div>
         <FacebookLoginBtn />
 
