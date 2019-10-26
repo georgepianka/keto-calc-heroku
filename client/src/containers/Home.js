@@ -106,9 +106,6 @@ class Home extends Component {
                           { loggedIn ?
                             <>
                             <Route exact path='/' render={props => (
-
-
-
                               <EntryCalendar calendarDays = {calendarDays} {...props}/>
 
 

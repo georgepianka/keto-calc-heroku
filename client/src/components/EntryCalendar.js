@@ -4,6 +4,8 @@ import moment from 'moment'
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
 
+import { withRouter} from 'react-router-dom';
+
 
 
 const localizer = momentLocalizer(moment)
@@ -46,10 +48,10 @@ const CustomToolbar = (props) => {
     }
 
 
-const EntryCalendar = ({calendarDays}) => (
-    <div style={{ height: 900, backgroundColor: "snow" }}>
+const EntryCalendar = ({calendarDays, history}) => (
+    <div style={{ height: "110vh", backgroundColor: "snow" }}>
     <Calendar
-    style={{ height: 800 }}
+     style={{ height: "100vh", padding: "2%"}}
       startAccessor="start"
       endAccessor="end"
       localizer={localizer}
@@ -65,16 +67,21 @@ const EntryCalendar = ({calendarDays}) => (
 
         toolbar: CustomToolbar,
         event: (event) => {
-          console.log(event)
           return (
             <div> <strong> {event.title} </strong> </div>
           )
         },
 
         month: {
-          dateHeader: ({label, date, dateCell, event}) => {
+          dateHeader: ({label, date}) => {
+            let handleClickEvent = calendarDays.find(day =>
+                  moment(date).isBetween(
+                    day.start, day.end, null, '[]'
+                  )) !== undefined
+
             return (
-                <button type="button" className="btn-primary btn-md button-hover m-2" onClick={() => console.log(event.id)}>
+                <button type="button" className="btn-primary btn-md button-hover m-2"
+                onClick={handleClickEvent ? ()=>history.push("/graph") : null}>
                   <span/>
                 {label}
                 </button>
@@ -85,7 +92,7 @@ const EntryCalendar = ({calendarDays}) => (
 
         }}
 
-      eventPropGetter={
+      /*eventPropGetter={
         (event, start, end, isSelected) => {
           let newStyle = {
             //textStyle: 'bold',
@@ -102,6 +109,7 @@ const EntryCalendar = ({calendarDays}) => (
           };
         }
       }
+      */
       /*dayPropGetter={
         (date) => {
 
@@ -126,4 +134,4 @@ const EntryCalendar = ({calendarDays}) => (
 );
 
 
-export default EntryCalendar;
+export default withRouter(EntryCalendar);
