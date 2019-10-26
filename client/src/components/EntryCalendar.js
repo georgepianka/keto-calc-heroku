@@ -7,8 +7,23 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 
 
 const localizer = momentLocalizer(moment)
+/*Let’s use bind to create a function double on its base:
 
+function mul(a, b) {
+  return a * b;
+}
 
+let double = mul.bind(null, 2);
+
+alert( double(3) ); // = mul(2, 3) = 6
+alert( double(4) ); // = mul(2, 4) = 8
+alert( double(5) ); // = mul(2, 5) = 10
+The call to mul.bind(null, 2) creates a new function double that passes calls to mul, fixing null as the context and 2 as the first argument. Further arguments are passed “as is”.
+
+That’s called partial function application – we create a new function by fixing some parameters of the existing one.
+
+Please note that here we actually don’t use this here. But bind requires it, so we must put in something like null.
+*/
 const CustomToolbar = (props) => {
 
   const navigate = action => {
@@ -31,14 +46,14 @@ const CustomToolbar = (props) => {
     }
 
 
-const EntryCalendar = ({events}) => (
+const EntryCalendar = ({calendarDays}) => (
     <div style={{ height: 900, backgroundColor: "snow" }}>
     <Calendar
     style={{ height: 800 }}
       startAccessor="start"
       endAccessor="end"
       localizer={localizer}
-      events={events}
+      events={calendarDays}
       views={["month"]}
       defaultDate={moment().toDate()}
       selectable={true}
@@ -57,9 +72,9 @@ const EntryCalendar = ({events}) => (
         },
 
         month: {
-          dateHeader: ({label, date, dateCell}) => {
+          dateHeader: ({label, date, dateCell, event}) => {
             return (
-                <button type="button" className="btn-primary btn-md button-hover m-2" onClick={() => console.log(date)}>
+                <button type="button" className="btn-primary btn-md button-hover m-2" onClick={() => console.log(event.id)}>
                   <span/>
                 {label}
                 </button>

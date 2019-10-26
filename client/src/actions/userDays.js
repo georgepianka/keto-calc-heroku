@@ -1,3 +1,6 @@
+import { setCalendarDays } from "./calendarDays.js"
+
+
 export const setDays = days => {
   return {
     type: "SET_DAYS",
@@ -28,6 +31,7 @@ export const getDays = () => {
           alert(response.error)
         } else {
           dispatch(setDays(response.data))
+          dispatch(setCalendarDays(response.data))
         }
       })
 

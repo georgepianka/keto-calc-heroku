@@ -1,6 +1,7 @@
 //import { otherAction } from "./otherAction.js";
 
 import { getDays, clearDays } from "./userDays.js"
+import { clearCalendarDays } from "./calendarDays.js"
 import { resetUserForm } from "./userForm.js"
 
 
@@ -123,6 +124,7 @@ export const logout = (history) => {
     .then(response => {
       dispatch(clearCurrentUser())
       dispatch(clearDays())
+      dispatch(clearCalendarDays())
       //dispatch(otherAction())
       history.push('/')
       window.FB.getLoginStatus((response) => {
