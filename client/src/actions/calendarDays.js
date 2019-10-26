@@ -4,50 +4,28 @@ import moment from "moment";
 // var d = new Date(2018, 11, 24);
 // new Date(moment("09/25/19"));
 
-export const events = [
-  { title: "NetCarbs: 20",
-    allDay: true,
-    start: new Date(moment("09/25/19")),
-    end: new Date(moment("09/25/19")),
-    id: 2
-  },
-
-  { title: "Calories: 1500",
-    allDay: true,
-    start: new Date(moment()),
-    end: new Date(moment())
-  },
-
-  { title: "Weight: 190",
-    allDay: true,
-    start: new Date(moment()),
-    end: new Date(moment())
-  }
-]
-
-
-
 export const setCalendarDays = days => {
-  const calendarFormattedDays = days.map(day =>
+  const calendarFormattedDays = days.flatMap(day =>
         (
-          { title: `NetCarbs: ${day.attributes.total_net_carbs}`,
+          [{ title: `NetCarbs: ${day.attributes.total_net_carbs}`,
             allDay: true,
-            start: day.date,
-            end: day.date,
+            start: day.attributes.date,
+            end: day.attributes.date,
             id: day.id
           },
           { title: `Calories: ${day.attributes.total_calories}`,
             allDay: true,
-            start: day.date,
-            end: day.date,
+            start: day.attributes.date,
+            end: day.attributes.date,
             id: day.id
           },
           { title: `Weight: ${day.attributes.weight}`,
             allDay: true,
-            start: day.date,
-            end: day.date,
+            start: day.attributes.date,
+            end: day.attributes.date,
             id: day.id
-          }
+          },
+        ]
         )
   )
   return {

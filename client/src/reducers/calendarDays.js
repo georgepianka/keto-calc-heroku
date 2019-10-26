@@ -4,7 +4,7 @@ export default (state = initialState, action) => {
   switch(action.type) {
 
    case "SET_CALENDAR_DAYS":
-    return action.days
+    return action.calendarFormattedDays
 
 
    case "CLEAR_CALENDAR_DAYS":

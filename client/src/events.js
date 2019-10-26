@@ -1,6 +1,8 @@
 import moment from "moment";
 
 // moment('2017-06-10T16:08:00').format('MM/DD/YYYY')
+// var d = new Date(2018, 11, 24);
+// new Date(moment("09/25/19"));
 
 export const events = [
   { title: "NetCarbs: 20",

@@ -58,7 +58,7 @@ const EntryCalendar = ({calendarDays}) => (
       defaultDate={moment().toDate()}
       selectable={true}
       onSelectEvent={(event) => console.log(event.id)}
-      onSelectSlot={(event) => console.log(event.id)}
+      //onSelectSlot={(event) => console.log(event.id)}
 
 
       components={{
@@ -88,8 +88,8 @@ const EntryCalendar = ({calendarDays}) => (
       eventPropGetter={
         (event, start, end, isSelected) => {
           let newStyle = {
-            textStyle: 'bold',
-            color: "black"
+            //textStyle: 'bold',
+            //color: "black"
             //marginTop: -2,
             //borderRadius: "0px",
             //border: "none"
