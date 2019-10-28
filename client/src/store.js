@@ -6,6 +6,7 @@ import currentUser from './reducers/currentUser'
 //import reducer2 from './reducers/reducer2'
 import userDays from './reducers/userDays'
 import calendarDays from './reducers/calendarDays'
+import graphDays from './reducers/graphDays'
 import userForm from './reducers/userForm'
 
 
@@ -15,6 +16,7 @@ const reducer = combineReducers({
   //reducer2
   userDays,
   calendarDays,
+  graphDays,
   userForm
 });
 

@@ -5,45 +5,41 @@ const CanvasJS = CanvasJSReact.CanvasJS;
 const CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
 
-const SplineGraph = ({ dataPoints }) => {
+const SplineGraph = ({ graphDays }) => {
 
   const options = {
 				animationEnabled: true,
 				title:{
-					text: "Number of New Customers"
+					text: "NetCarbs-Calories-Weight"
 				},
 				axisY : {
 					title: "Number of Customers",
+          interval: 10,
 					includeZero: false
 				},
 				toolTip: {
 					shared: true
 				},
-				data: [{
+				data: [
+        {
 					type: "spline",
-					name: "2016",
+					name: "NetCarbs",
 					showInLegend: true,
-					dataPoints: dataPoints
+					dataPoints: graphDays.netCarbs
 				},
-				{
+        {
 					type: "spline",
-					name: "2017",
+					name: "Calories",
 					showInLegend: true,
-					dataPoints: [
-						{ y: 172, label: "Jan" },
-						{ y: 173, label: "Feb" },
-						{ y: 175, label: "Mar" },
-						{ y: 172, label: "Apr" },
-						{ y: 162, label: "May" },
-						{ y: 165, label: "Jun" },
-						{ y: 172, label: "Jul" },
-						{ y: 168, label: "Aug" },
-						{ y: 175, label: "Sept" },
-						{ y: 170, label: "Oct" },
-						{ y: 165, label: "Nov" },
-						{ y: 169, label: "Dec" }
-					]
-				}]
+					dataPoints: graphDays.calories
+				},
+        {
+					type: "spline",
+					name: "Weight",
+					showInLegend: true,
+					dataPoints: graphDays.weight
+				},
+				]
 		}
 
 		return (

@@ -32,7 +32,7 @@ const NavBar = ({ currentUser, loggedIn, toggle, isOpen }) => {
                     <NavLink className="btn btn-success btn-sm border border-muted text-light" exact to="/days/new" activeStyle={{fontSize: '25px'}}>Log</NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink className="btn btn-primary btn-sm border border-muted text-light" exact to="/calendar/days" activeStyle={{fontSize: '25px'}}>Calendar</NavLink>
+                    <NavLink className="btn btn-primary btn-sm border border-muted text-light" exact to="/" activeStyle={{fontSize: '25px'}}>Calendar</NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink className="btn btn-info btn-sm border border-muted text-light" exact to="/graph/days" activeStyle={{fontSize: '25px'}}>Graph</NavLink>

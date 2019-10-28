@@ -93,7 +93,7 @@ class Home extends Component {
 
 
     render() {
-      const { loggedIn, currentUser, calendarDays  } = this.props;
+      const { loggedIn, currentUser, calendarDays, graphDays  } = this.props;
         return (
           <div>
                 { loggedIn ? <NavBar currentUser={currentUser} loggedIn={loggedIn} isOpen={this.state.isOpen} toggle={this.toggle}/> : null }
@@ -105,14 +105,14 @@ class Home extends Component {
 
                           { loggedIn ?
                             <>
-                            <Route exact path='/calendar/days' render={props => (
+                            <Route exact path='/' render={props => (
                               <EntryCalendar calendarDays = {calendarDays} {...props}/>
 
 
 
                             )}/>
                             <Route exact path='/graph/days' render={props => (
-                              <SplineGraph dataPoints = {dataPoints} {...props}/>
+                              <SplineGraph graphDays = {graphDays} {...props}/>
                             )}/>
                             <Route exact path="/days/new" render={props => (
                               <SplineGraph dataPoints = {dataPoints} {...props}/>
@@ -169,4 +169,4 @@ const mapStateToProps = (state) => {
 }
 */
 
-export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser, calendarDays: state.calendarDays}), { getCurrentUser, facebookLogin, login, signup })(Home));
+export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser, calendarDays: state.calendarDays, graphDays: state.graphDays}), { getCurrentUser, facebookLogin, login, signup })(Home));

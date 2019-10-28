@@ -1,5 +1,5 @@
 import { setCalendarDays } from "./calendarDays.js"
-
+import { setGraphDays } from "./graphDays.js"
 
 export const setDays = days => {
   return {
@@ -32,6 +32,7 @@ export const getDays = () => {
         } else {
           dispatch(setDays(response.data))
           dispatch(setCalendarDays(response.data))
+          dispatch(setGraphDays(response.data))
         }
       })
 
