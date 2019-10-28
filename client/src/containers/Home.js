@@ -18,6 +18,7 @@ import FlipMove from "react-flip-move";
 import EntryCalendar from '../components/EntryCalendar'
 import NavBar from '../components/NavBar'
 import Welcome from '../components/Welcome'
+import DateSelect from '../components/DateSelect'
 import UserForm from '../components/UserForm'
 import Graph from '../components/Graph'
 import SideBar from '../components/SideBar'
@@ -93,7 +94,7 @@ class Home extends Component {
 
 
     render() {
-      const { loggedIn, currentUser, calendarDays, graphDays  } = this.props;
+      const { loggedIn, currentUser, userDays, calendarDays, graphDays  } = this.props;
         return (
           <div>
                 { loggedIn ? <NavBar currentUser={currentUser} loggedIn={loggedIn} isOpen={this.state.isOpen} toggle={this.toggle}/> : null }
@@ -109,15 +110,17 @@ class Home extends Component {
 
                           { loggedIn ?
                             <>
+                            <Route exact path='/days/new' render={props => {
+                              const userDates = userDays.map(day => day.attributes.date)
+                              return <DateSelect userDates={userDates} {...props}/>
+                            }}/>
                             <Route exact path='/calendar/days' render={props => (
                               <EntryCalendar calendarDays = {calendarDays} {...props}/>
                             )}/>
                             <Route exact path='/graph/days' render={props => (
                               <Graph graphDays = {graphDays} {...props}/>
                             )}/>
-                            <Route exact path="/days/new" render={props => (
-                              <Graph dataPoints = {dataPoints} {...props}/>
-                            )}/>
+
                             </>
                             :
                             <>
@@ -129,6 +132,7 @@ class Home extends Component {
                             <Route exact path='/signup' render={props => (
                               <UserForm isSignup={true} userFormSubmit= {this.props.signup} {...props}/>
                             )}/>
+
                             </>
                           }
 
@@ -171,4 +175,4 @@ const mapStateToProps = (state) => {
 }
 */
 
-export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser, calendarDays: state.calendarDays, graphDays: state.graphDays}), { getCurrentUser, facebookLogin, login, signup })(Home));
+export default withRouter(connect(state => ({currentUser: state.currentUser, loggedIn: !!state.currentUser, userDays: state.userDays, calendarDays: state.calendarDays, graphDays: state.graphDays}), { getCurrentUser, facebookLogin, login, signup })(Home));
