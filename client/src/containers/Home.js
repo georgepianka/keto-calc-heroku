@@ -24,7 +24,7 @@ import SideBar from '../components/SideBar'
 import { events } from '../events'
 import { dataPoints } from '../dataPoints'
 import { getCurrentUser, facebookLogin, login, signup } from '../actions/currentUser';
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Redirect, Route, Switch, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import moment from 'moment'
 import ketoCalc from '../styles/ketocalc.jpg'
@@ -102,14 +102,15 @@ class Home extends Component {
 
 
                           <Switch>
+                          <Route exact path='/'>
+                            {loggedIn ? <Redirect to='/calendar/days'/> : < Welcome />}
+
+                          </Route>
 
                           { loggedIn ?
                             <>
-                            <Route exact path='/' render={props => (
+                            <Route exact path='/calendar/days' render={props => (
                               <EntryCalendar calendarDays = {calendarDays} {...props}/>
-
-
-
                             )}/>
                             <Route exact path='/graph/days' render={props => (
                               <Graph graphDays = {graphDays} {...props}/>
@@ -120,7 +121,8 @@ class Home extends Component {
                             </>
                             :
                             <>
-                            <Route exact path='/' component={Welcome}/>
+
+                            <Route exact path='/welcome' component={Welcome}/>
                             <Route exact path='/login' render={props => (
                               <UserForm isSignup={false} userFormSubmit= {this.props.login} {...props}/>
                             )}/>

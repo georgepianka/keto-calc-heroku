@@ -24,7 +24,7 @@ const Graph = ({ graphDays }) => {
           text: "NetCarbs - Calories - Weight"
         },
         subtitles: [{
-          text: "Click Legend to Hide or Unhide Data Series"
+          text: "Click Legend to Toggle Each Variable"
         }],
         axisY: [
           {

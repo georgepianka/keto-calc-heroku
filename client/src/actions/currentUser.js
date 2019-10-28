@@ -128,7 +128,7 @@ export const logout = (history) => {
       dispatch(clearCalendarDays())
       dispatch(clearGraphDays())
       //dispatch(otherAction())
-      history.push('/')
+      history.push('/welcome')
       window.FB.getLoginStatus((response) => {
         if (response.status === 'connected') {
             window.FB.logout(()=> window.FB.XFBML.parse())
