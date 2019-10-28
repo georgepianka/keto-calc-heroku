@@ -19,7 +19,7 @@ import EntryCalendar from '../components/EntryCalendar'
 import NavBar from '../components/NavBar'
 import Welcome from '../components/Welcome'
 import UserForm from '../components/UserForm'
-import SplineGraph from '../components/SplineGraph'
+import Graph from '../components/Graph'
 import SideBar from '../components/SideBar'
 import { events } from '../events'
 import { dataPoints } from '../dataPoints'
@@ -112,10 +112,10 @@ class Home extends Component {
 
                             )}/>
                             <Route exact path='/graph/days' render={props => (
-                              <SplineGraph graphDays = {graphDays} {...props}/>
+                              <Graph graphDays = {graphDays} {...props}/>
                             )}/>
                             <Route exact path="/days/new" render={props => (
-                              <SplineGraph dataPoints = {dataPoints} {...props}/>
+                              <Graph dataPoints = {dataPoints} {...props}/>
                             )}/>
                             </>
                             :
