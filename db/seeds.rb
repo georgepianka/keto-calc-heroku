@@ -12,22 +12,22 @@ Day.create(user_id: 1, date: Date.strptime('09/20/2019', '%m/%d/%Y'), weight: 18
 Day.create(user_id: 1, date: Date.strptime('09/22/2019', '%m/%d/%Y'), weight: 187)
 
 
-Entry.create(day_id: 1, net_carbs: 10, calories: 200, protein: 5, fat: 15)
-Entry.create(day_id: 1, net_carbs: 9, calories: 300, protein: 6, fat: 16)
-Entry.create(day_id: 1, net_carbs: 8, calories: 400, protein: 7, fat: 17)
+Entry.create(day_id: 1, name: "Snack Bar", net_carbs: 10, calories: 200, protein: 5, fat: 15)
+Entry.create(day_id: 1, name: "Snack Bar", net_carbs: 9, calories: 300, protein: 6, fat: 16)
+Entry.create(day_id: 1, name: "Protein Bar", net_carbs: 8, calories: 400, protein: 7, fat: 17)
 
-Entry.create(day_id: 2, net_carbs: 9, calories: 250, fat: 15)
-Entry.create(day_id: 2, net_carbs: 8, calories: 350, protein: 6)
-Entry.create(day_id: 2, net_carbs: 7, calories: 450, protein: 7, fat: 17)
+Entry.create(day_id: 2, name: "Snack Bar", net_carbs: 9, calories: 250, fat: 15)
+Entry.create(day_id: 2, name: "Snack Bar", net_carbs: 8, calories: 350, protein: 6)
+Entry.create(day_id: 2, name: "Protein Bar", net_carbs: 7, calories: 450, protein: 7, fat: 17)
 
 
 Day.create(user_id: 1, date: Date.strptime('10/20/2019', '%m/%d/%Y'), weight: 185)
 Day.create(user_id: 1, date: Date.strptime('10/30/2019', '%m/%d/%Y'), weight: 183)
 
-Entry.create(day_id: 3, net_carbs: 8, calories: 200, protein: 5, fat: 15)
-Entry.create(day_id: 3, net_carbs: 7, calories: 300, protein: 6, fat: 16)
-Entry.create(day_id: 3, net_carbs: 6, calories: 400, protein: 7, fat: 17)
+Entry.create(day_id: 3, name: "Snack Bar", net_carbs: 8, calories: 200, protein: 5, fat: 15)
+Entry.create(day_id: 3, name: "Snack Bar", net_carbs: 7, calories: 300, protein: 6, fat: 16)
+Entry.create(day_id: 3, name: "Protein Bar", net_carbs: 6, calories: 400, protein: 7, fat: 17)
 
-Entry.create(day_id: 4, net_carbs: 6, calories: 250, fat: 15)
-Entry.create(day_id: 4, net_carbs: 6, calories: 350, protein: 6)
-Entry.create(day_id: 4, net_carbs: 6, calories: 450, protein: 7, fat: 17)
+Entry.create(day_id: 4, name: "Snack Bar", net_carbs: 6, calories: 250, fat: 15)
+Entry.create(day_id: 4, name: "Snack Bar", net_carbs: 6, calories: 350, protein: 6)
+Entry.create(day_id: 4, name: "Protein Bar", net_carbs: 6, calories: 450, protein: 7, fat: 17)

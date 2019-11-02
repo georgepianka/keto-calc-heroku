@@ -65,6 +65,6 @@ class Api::V1::EntriesController < ApplicationController
     end
 
     def entry_params
-      params.require(:entry).permit(:calories, :net_carbs, :protein, :fat, :day_id)
+      params.require(:entry).permit(:name, :calories, :net_carbs, :protein, :fat, :day_id)
     end
 end
