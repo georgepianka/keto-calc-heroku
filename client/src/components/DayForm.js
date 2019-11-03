@@ -6,7 +6,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 
 
-const DateSelect = ({userDates}) => {
+const DayForm = ({userDates}) => {
   const [startDate, setStartDate] = useState(new Date());
   return (
 
@@ -33,4 +33,4 @@ const DateSelect = ({userDates}) => {
 
 
 
-export default DateSelect
+export default DayForm

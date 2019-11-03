@@ -18,7 +18,7 @@ import FlipMove from "react-flip-move";
 import EntryCalendar from '../components/EntryCalendar'
 import NavBar from '../components/NavBar'
 import Welcome from '../components/Welcome'
-import DayForm from '../components/DayForm'
+import DayLog from './DayLog'
 import UserForm from '../components/UserForm'
 import Graph from '../components/Graph'
 import SideBar from '../components/SideBar'
@@ -110,9 +110,9 @@ class Home extends Component {
 
                           { loggedIn ?
                             <>
-                            <Route exact path='/days/new' render={props => {
+                            <Route path='/log' render={props => {
                               const userDates = userDays.map(day => day.attributes.date)
-                              return <DayForm userDates={userDates} {...props}/>
+                              return <DayLog userDates={userDates} {...props}/>
                             }}/>
                             <Route exact path='/calendar/days' render={props => (
                               <EntryCalendar calendarDays = {calendarDays} {...props}/>
