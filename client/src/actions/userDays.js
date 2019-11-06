@@ -38,27 +38,3 @@ export const getDays = () => {
 
   }
 }
-
-export const createDay = (dayData, history) => {
-  return dispatch => {
-
-    return fetch("/api/v1/days", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(dayData)
-    })
-      .then(r => r.json())
-      .then(resp => {
-        if (resp.error) {
-          alert(resp.error)
-        } else {
-          console.log(resp.data)
-          dispatch(addPlace(resp.data))
-          dispatch(resetPlaceForm())
-          history.push(`/places/${resp.data.id}`)
-        }
-      })
-  }
-}
