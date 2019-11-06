@@ -12,6 +12,7 @@ gem 'fast_jsonapi'
 
 gem 'foreman'
 gem 'nokogiri' , '>= 1.10.4'
+gem "loofah", ">= 2.3.1"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
