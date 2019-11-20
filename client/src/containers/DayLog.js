@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
 import ketoCalc from '../styles/ketocalc.jpg';
 import DateForm from '../components/DateForm';
-//import moment from 'moment';
+import { createDay } from '../actions/currentDay';
+import moment from 'moment';
 
 class DayLog extends Component {
 
@@ -14,7 +16,8 @@ class DayLog extends Component {
 
     setStartDate = (date)=> {
       this.setState({ startDate: date });
-      this.props.history.push("/log")
+      console.log(moment(date).format("YYYY-MM-DD"));
+      this.props.createDay(moment(date).format("YYYY-MM-DD"), this.props.history);
 
 
     }
@@ -34,13 +37,12 @@ class DayLog extends Component {
           <Route exact path='/log/days/new' render={props => {
             return <DateForm setStartDate={this.setStartDate} startDate={this.state.startDate} userDates={this.props.userDates} {...props}/>
           }}/>
-
+{/*
           <Route exact path='/log/days/:id/edit' render={props => {
-            const day = days.find(day => day.id === props.match.params.id)
             return <DayEdit day={day} {...props}/>
             }
           }/>
-
+*/}
         </Switch>
 
 
@@ -57,4 +59,5 @@ class DayLog extends Component {
     }
 
 }
-export default DayLog;
+
+export default withRouter(connect(state => ({currentDay: state.currentDay}), { createDay })(DayLog));

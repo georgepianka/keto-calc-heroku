@@ -3,6 +3,7 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger'
 
 import currentUser from './reducers/currentUser'
+import currentDay from './reducers/currentDay'
 //import reducer2 from './reducers/reducer2'
 import userDays from './reducers/userDays'
 import calendarDays from './reducers/calendarDays'
@@ -14,6 +15,7 @@ import userForm from './reducers/userForm'
 const reducer = combineReducers({
   currentUser,
   //reducer2
+  currentDay,
   userDays,
   calendarDays,
   graphDays,
