@@ -35,6 +35,12 @@ class DayLog extends Component {
             return <DateForm setStartDate={this.setStartDate} startDate={this.state.startDate} userDates={this.props.userDates} {...props}/>
           }}/>
 
+          <Route exact path='/log/days/:id/edit' render={props => {
+            const day = days.find(day => day.id === props.match.params.id)
+            return <DayEdit day={day} {...props}/>
+            }
+          }/>
+
         </Switch>
 
 
