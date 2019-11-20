@@ -3,6 +3,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import ketoCalc from '../styles/ketocalc.jpg';
 import DateForm from '../components/DateForm';
+import DayEdit from '../components/DayEdit';
 import { createDay } from '../actions/currentDay';
 import moment from 'moment';
 
@@ -37,12 +38,11 @@ class DayLog extends Component {
           <Route exact path='/log/days/new' render={props => {
             return <DateForm setStartDate={this.setStartDate} startDate={this.state.startDate} userDates={this.props.userDates} {...props}/>
           }}/>
-{/*
+
           <Route exact path='/log/days/:id/edit' render={props => {
-            return <DayEdit day={day} {...props}/>
+            return <DayEdit currentDay={this.props.currentDay} {...props}/>
             }
           }/>
-*/}
         </Switch>
 
 

@@ -29,14 +29,11 @@ export const createDay = (dayDate, history) => {
     })
       .then(r => r.json())
       .then(resp => {
-        if (resp.error) {
-          alert(resp.error)
-        } else {
           console.log(resp.data)
           dispatch(setCurrentDay(resp.data))
           history.push(`/log/days/${resp.data.id}/edit`)
           dispatch(getDays())
-        }
+
       })
   }
 }
