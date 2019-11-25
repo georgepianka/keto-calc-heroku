@@ -31,10 +31,14 @@ class Api::V1::DaysController < ApplicationController
     if @day.save
       render json: DaySerializer.new(@day), status: :created
     else
-      resp = {
-        error: @day.errors.full_messages.to_sentence
-      }
-      render json: resp, status: :unprocessable_entity
+    #  resp = {
+    #    error: @day.errors.full_messages.to_sentence
+    #  }
+      @day = Day.where(date: params[:date])
+      options = {}
+      options[:include] = [:entries]
+      render json: DaySerializer.new(@day, options), status: :ok
+      #render json: resp, status: :unprocessable_entity
     end
   end
 
