@@ -40,7 +40,7 @@ class DayLog extends Component {
           }}/>
 
           <Route exact path='/log/days/:id/edit' render={props => {
-            return <DayEdit currentDay={this.props.currentDay} {...props}/>
+            return <DayEdit dayEditForm={this.props.dayEditForm} currentDay={this.props.currentDay} {...props}/>
             }
           }/>
         </Switch>
@@ -60,4 +60,4 @@ class DayLog extends Component {
 
 }
 
-export default withRouter(connect(state => ({currentDay: state.currentDay}), { createDay })(DayLog));
+export default withRouter(connect(state => ({currentDay: state.currentDay, dayEditForm: state.dayForm}), { createDay })(DayLog));
