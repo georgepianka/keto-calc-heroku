@@ -1,17 +1,13 @@
 const initialState = {
   date: "",
-  weight: 0
+  weight: ""
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
     case "UPDATE_DAY_EDIT_FORM":
-      const attribute = {
-        ...state,
-        [action.dayFormData.name]: action.dayFormData.value
-      }
-      return attribute
+      return action.formData
 
     case "RESET_DAY_EDIT_FORM":
       return initialState

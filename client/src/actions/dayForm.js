@@ -1,8 +1,7 @@
-export const updateDayEditForm = (name, value) => {
-  const dayFormData = { name, value }
+export const updateDayEditForm = (formData) => {
   return {
     type: "UPDATE_DAY_EDIT_FORM",
-    dayFormData
+      formData
   }
 }
 

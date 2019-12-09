@@ -40,3 +40,26 @@ export const createDay = (dayDate, history) => {
       })
   }
 }
+
+export const updateDay = (dayEditFormData, dayId, history) => {
+  return dispatch => {
+
+    return fetch(`/api/v1/days/${dayId}`, {
+      method: "PATCH",
+      headers: headers,
+      body: JSON.stringify(dayEditFormData)
+    })
+      .then(r => r.json())
+      .then(resp => {
+        if (resp.error) {
+          alert(resp.error)
+        } else {
+          console.log(resp.data)
+          dispatch(setCurrentDay(resp.data))
+          dispatch(setDayEditForm(resp.data))
+          history.push(`/log/days/${resp.data.id}/edit`)
+          dispatch(getDays())
+        }
+      })
+  }
+}

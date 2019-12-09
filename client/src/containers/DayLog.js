@@ -30,7 +30,7 @@ class DayLog extends Component {
         <h1 className="display-5 font-weight-bold">Keto Calc</h1>
         <img src={ketoCalc} className="d-block mx-auto my-3" alt="KetoCalc" style={{width: 100, height: 100, float: 'none', alignSelf: 'center', marginRight: 5, opacity: .8}}/>
         <h4 className="mb-5 font-weight-light">Keeping You In Ketosis</h4>
-        <h2 className="display-5 font-weight-bold"> LOG </h2>
+        <h2 className="display-5 font-weight-bold"> LOG DAY </h2>
 
 
         <Switch>
@@ -40,7 +40,7 @@ class DayLog extends Component {
           }}/>
 
           <Route exact path='/log/days/:id/edit' render={props => {
-            return <DayEdit dayEditForm={this.props.dayEditForm} currentDay={this.props.currentDay} {...props}/>
+            return <DayEdit dayEditFormData={this.props.dayEditForm} currentDay={this.props.currentDay} {...props}/>
             }
           }/>
         </Switch>

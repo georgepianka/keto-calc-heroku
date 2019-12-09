@@ -1,54 +1,47 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { dayForm } from '../actions/dayForm';
-import { updateUserForm } from '../actions/userForm';
+import { updateDayEditForm } from '../actions/dayForm';
+import { updateDay } from '../actions/currentDay';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import ketoCalc from '../styles/ketocalc.jpg';
 
 
 
-const DayEdit = () =>
-
-<h1> HELLO FRIEND </h1>
 
 
+const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, history }) => {
 
-/*
-
-const DayEdit = ( {currentDay, dayForm, updateUserForm, history }) => {
-
-  const handleInputChange = event => {
+  const handleChange = event => {
     const { name, value } = event.target
-    const updatedFormInfo = {
-      ...userFormData,
+    const dayFormData = {
+      ...dayEditFormData,
       [name]: value
         }
-    updateUserForm(updatedFormInfo)
+    updateDayEditForm(dayFormData)
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    //userFormSubmit(userFormData, history)
+    updateDay(dayEditFormData, currentDay.id, history)
   }
+
+  const entries = currentDay.included
 
   return (
       <Form className="mb-3" onSubmit={handleSubmit}>
        <FormGroup>
-        <Input className="form-control-lg" placeholder="Email" type="text" name="email" value={userFormData.email} onChange={handleInputChange}></Input>
+        <Input className="form-control-lg" type="date" name="date" value={dayEditFormData.date} onChange={handleChange}></Input>
        </FormGroup>
        <FormGroup>
-        <Input className="form-control-lg" placeholder="Password" type="text" name="password" value={userFormData.password} onChange={handleInputChange}></Input>
-       </FormGroup>
-       <FormGroup>
-          <Input className="form-control-lg" placeholder="Username" type="text" name="username" value={userFormData.username} onChange={handleInputChange}></Input>
+        <Input className="form-control-lg" placeholder={dayEditFormData.weight} type="text" name="password" value={dayEditFormData.weight} onChange={handleChange}></Input>
        </FormGroup>
 
-       <Button className="btn-lg" color="success">SignUp</Button>
+       <Button className="btn-lg" color="success">UPDATE</Button>
 
        </Form>
   )
 }
 
-*/
 
-export default connect(state => ({userFormData: state.userForm}),{ updateUserForm })(DayEdit);
+export default connect(null, { updateDayEditForm, updateDay })(DayEdit);

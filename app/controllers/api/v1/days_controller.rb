@@ -34,7 +34,7 @@ class Api::V1::DaysController < ApplicationController
     #  resp = {
     #    error: @day.errors.full_messages.to_sentence
     #  }
-      @day = Day.where(date: params[:date])
+      @day = Day.where(date: params[:date])[0]
       options = {}
       options[:include] = [:entries]
       render json: DaySerializer.new(@day, options), status: :ok
