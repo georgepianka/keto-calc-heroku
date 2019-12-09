@@ -26,15 +26,16 @@ const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, hi
     updateDay(dayEditFormData, currentDay.id, history)
   }
 
-  const entries = currentDay.included
 
   return (
       <Form className="mb-3" onSubmit={handleSubmit}>
        <FormGroup>
-        <Input className="form-control-lg" type="date" name="date" value={dayEditFormData.date} onChange={handleChange}></Input>
+       <Label for="date"> Date </Label>
+        <Input className="form-control-lg" id="date" type="date" name="date" value={dayEditFormData.date} onChange={handleChange}></Input>
        </FormGroup>
        <FormGroup>
-        <Input className="form-control-lg" placeholder={dayEditFormData.weight} type="text" name="password" value={dayEditFormData.weight} onChange={handleChange}></Input>
+       <Label for="weight"> Weight </Label>
+        <Input className="form-control-lg" id="weight" placeholder={dayEditFormData.weight} type="text" name="weight" value={dayEditFormData.weight} onChange={handleChange}></Input>
        </FormGroup>
 
        <Button className="btn-lg" color="success">UPDATE</Button>
