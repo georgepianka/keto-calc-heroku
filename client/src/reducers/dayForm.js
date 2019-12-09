@@ -1,29 +1,23 @@
 const initialState = {
   date: "",
-  price: "",
-  rating: 0,
-  address: "",
-  image_url: "",
-  review_count: 0,
-  category: "",
-  visited: false
+  weight: 0
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
 
-    case "UPDATE_NEW_PLACE_FORM":
-      const returnVal = {
+    case "UPDATE_DAY_EDIT_FORM":
+      const attribute = {
         ...state,
-        [action.placeFormData.name]: action.placeFormData.value
+        [action.dayFormData.name]: action.dayFormData.value
       }
-      return returnVal
+      return attribute
 
-    case "RESET_NEW_PLACE_FORM":
+    case "RESET_DAY_EDIT_FORM":
       return initialState
 
-    case "SET_FORM_DATA_FOR_EDIT":
-      return action.editPlaceFormData
+    case "SET_DAY_EDIT_FORM":
+      return action.dayFormData
 
     default:
       return state

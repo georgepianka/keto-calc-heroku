@@ -9,6 +9,7 @@ import userDays from './reducers/userDays'
 import calendarDays from './reducers/calendarDays'
 import graphDays from './reducers/graphDays'
 import userForm from './reducers/userForm'
+import dayForm from './reducers/dayForm'
 
 
 
@@ -19,7 +20,8 @@ const reducer = combineReducers({
   userDays,
   calendarDays,
   graphDays,
-  userForm
+  userForm,
+  dayForm
 });
 
 

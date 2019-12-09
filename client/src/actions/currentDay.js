@@ -1,5 +1,6 @@
 
 import { getDays } from "./userDays.js"
+import { setDayEditForm } from "./dayForm.js"
 
 const headers = {
 'Accept': 'application/json',
@@ -32,6 +33,7 @@ export const createDay = (dayDate, history) => {
       .then(resp => {
           console.log(resp.data)
           dispatch(setCurrentDay(resp.data))
+          dispatch(setDayEditForm(resp.data))
           history.push(`/log/days/${resp.data.id}/edit`)
           dispatch(getDays())
 
