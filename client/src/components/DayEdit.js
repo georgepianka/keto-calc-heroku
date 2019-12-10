@@ -5,6 +5,7 @@ import { updateDayEditForm } from '../actions/dayForm';
 import { updateDay } from '../actions/currentDay';
 import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Badge } from 'reactstrap';
 import ketoCalc from '../styles/ketocalc.jpg';
+import Favoriting from './Favoriting';
 
 
 
@@ -23,7 +24,7 @@ const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, hi
 
   const handleSubmit = event => {
     event.preventDefault()
-    updateDay(dayEditFormData, currentDay.id, history)
+    updateDay(dayEditFormData, currentDay.data.id, history)
   }
 
 
@@ -48,21 +49,19 @@ const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, hi
 
 
 
-  {/*
-         {currentDay.included.length > 0 ?
-           currentDay.included.map(entry => (
-           <div>
+      {currentDay.included &&
+        currentDay.included.map(entry =>
+           <div key={entry.id}>
              <h3> {entry.attributes.name} </h3>
              <ListGroup>
-             <ListGroupItem className="justify-content-between">Net Carbs: <Badge pill>{entry.attributes.net_carbs}</Badge></ListGroupItem>
-             <ListGroupItem className="justify-content-between">Calories: <Badge pill>{entry.attributes.calories}</Badge></ListGroupItem>
-             <ListGroupItem className="justify-content-between">Protein: <Badge pill>{entry.attributes.protein}</Badge></ListGroupItem>
-             <ListGroupItem className="justify-content-between">Fat: <Badge pill>{entry.attributes.fat}</Badge></ListGroupItem>
+             <ListGroupItem className="text-dark justify-content-between">Net Carbs: <Badge pill>{entry.attributes.net_carbs}</Badge></ListGroupItem>
              </ListGroup>
+             < Favoriting />
            </div>
 
-         )) : null}
-  */}
+        )
+      }
+
 
   </div>
 
@@ -71,4 +70,4 @@ const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, hi
 
 
 
-export default connect(null, { updateDayEditForm, updateDay })(DayEdit);
+export default connect(state => ({currentDay: state.currentDay, dayEditFormData: state.dayForm}), { updateDayEditForm, updateDay })(DayEdit);

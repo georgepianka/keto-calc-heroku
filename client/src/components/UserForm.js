@@ -34,7 +34,7 @@ const UserForm = ( {isSignup, userFormData, updateUserForm, userFormSubmit, hist
         <Input className="form-control-lg" placeholder="Email" type="text" name="email" value={userFormData.email} onChange={handleInputChange}></Input>
        </FormGroup>
        <FormGroup>
-        <Input className="form-control-lg" placeholder="Password" type="text" name="password" value={userFormData.password} onChange={handleInputChange}></Input>
+        <Input className="form-control-lg" placeholder="Password" type="password" name="password" value={userFormData.password} onChange={handleInputChange}></Input>
        </FormGroup>
         {isSignup ?
           <>

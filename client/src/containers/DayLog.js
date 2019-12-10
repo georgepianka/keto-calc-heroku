@@ -18,7 +18,9 @@ class DayLog extends Component {
     setStartDate = (date)=> {
       this.setState({ startDate: date });
       console.log(moment(date).format("YYYY-MM-DD"));
+      console.log("a")
       this.props.createDay(moment(date).format("YYYY-MM-DD"), this.props.history);
+      console.log("b")
 
 
     }
@@ -40,7 +42,7 @@ class DayLog extends Component {
           }}/>
 
           <Route exact path='/log/days/:id/edit' render={props => {
-            return <DayEdit dayEditFormData={this.props.dayEditForm} currentDay={this.props.currentDay} {...props}/>
+            return <DayEdit {...props}/>
             }
           }/>
         </Switch>
@@ -60,4 +62,4 @@ class DayLog extends Component {
 
 }
 
-export default withRouter(connect(state => ({currentDay: state.currentDay, dayEditForm: state.dayForm}), { createDay })(DayLog));
+export default withRouter(connect( null, { createDay })(DayLog));

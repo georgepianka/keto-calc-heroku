@@ -20,6 +20,7 @@ export const clearCurrentDay = () => {
   }
 }
 export const createDay = (dayDate, history) => {
+  console.log("c")
   return dispatch => {
     const dayData = {
       date: dayDate
@@ -31,14 +32,16 @@ export const createDay = (dayDate, history) => {
     })
       .then(r => r.json())
       .then(resp => {
-          console.log(resp.data)
-          dispatch(setCurrentDay(resp.data))
+        console.log("d")
+        //console.log(resp.data)
+          dispatch(setCurrentDay(resp))
           dispatch(setDayEditForm(resp.data))
           history.push(`/log/days/${resp.data.id}/edit`)
           dispatch(getDays())
 
       })
   }
+  console.log("e")
 }
 
 export const updateDay = (dayEditFormData, dayId, history) => {
@@ -55,7 +58,7 @@ export const updateDay = (dayEditFormData, dayId, history) => {
           alert(resp.error)
         } else {
           console.log(resp.data)
-          dispatch(setCurrentDay(resp.data))
+          dispatch(setCurrentDay(resp))
           dispatch(setDayEditForm(resp.data))
           history.push(`/log/days/${resp.data.id}/edit`)
           dispatch(getDays())

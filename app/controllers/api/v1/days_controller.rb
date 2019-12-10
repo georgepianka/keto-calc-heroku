@@ -44,7 +44,9 @@ class Api::V1::DaysController < ApplicationController
 
   def update
     if @day.update(day_params)
-      render json: DaySerializer.new(@day), status: :ok
+      options = {}
+      options[:include] = [:entries]
+      render json: DaySerializer.new(@day, options), status: :ok
     else
       resp = {
         error: @day.errors.full_messages.to_sentence
