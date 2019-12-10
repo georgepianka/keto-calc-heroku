@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { dayForm } from '../actions/dayForm';
 import { updateDayEditForm } from '../actions/dayForm';
 import { updateDay } from '../actions/currentDay';
-import { Button, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Badge } from 'reactstrap';
+import { Button, Card, Form, FormGroup, Label, Input, FormText, ListGroup, ListGroupItem, Badge } from 'reactstrap';
 import ketoCalc from '../styles/ketocalc.jpg';
-import Favoriting from './Favoriting';
+import Liking from './Liking';
 
 
 
@@ -48,15 +48,21 @@ const DayEdit = ( {currentDay, dayEditFormData, updateDayEditForm, updateDay, hi
 
 
 
-
+      {currentDay.included && <h3 className="display-5 font-weight-bold mt-5 mb-2 text-left"> Entries </h3>}
       {currentDay.included &&
         currentDay.included.map(entry =>
-           <div key={entry.id}>
-             <h3> {entry.attributes.name} </h3>
+           <div key={entry.id} className="text-left border mb-3">
+             <h3 className="mb-1 p-2">
+             {entry.attributes.name}
+             <Button color="transparent" className="btn-md text-danger float-right">X</Button>
+             </h3>
+             < Liking />
              <ListGroup>
-             <ListGroupItem className="text-dark justify-content-between">Net Carbs: <Badge pill>{entry.attributes.net_carbs}</Badge></ListGroupItem>
+             <ListGroupItem className="justify-content-between text-light">Net Carbs: <Badge pill>{entry.attributes.net_carbs}</Badge></ListGroupItem>
+             <ListGroupItem className="justify-content-between text-light">Calories: <Badge pill>{entry.attributes.calories}</Badge></ListGroupItem>
+             <ListGroupItem className="justify-content-between text-light">Protein: <Badge pill>{entry.attributes.protein}</Badge></ListGroupItem>
+             <ListGroupItem className="justify-content-between text-light">Fat: <Badge pill>{entry.attributes.fat}</Badge></ListGroupItem>
              </ListGroup>
-             < Favoriting />
            </div>
 
         )

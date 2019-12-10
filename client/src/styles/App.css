@@ -23,6 +23,13 @@
    color: white
  }
 
+li.list-group-item {
+ background-color: transparent;
+ border-top: 1px solid #ddd;
+ border-radius: 0;
+ color: #fff;
+ }
+
 .App {
    text-align: center;
    font-family: 'Source Sans Pro', sans-serif;
