@@ -1,7 +1,7 @@
 .bg {
   background-image: #0f2027; /* fallback for old browsers */
-  background-image: -webkit-linear-gradient(#0f2027, transparent), url(KetoCalcBackground.jpg); /* Chrome 10-25, Safari 5.1-6 */
-  background-image: linear-gradient(#0f2027, transparent, transparent), url(KetoCalcBackground.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-image: -webkit-linear-gradient(#0f2027, transparent), url(ketocalcBackground.jpg); /* Chrome 10-25, Safari 5.1-6 */
+  background-image: linear-gradient(#0f2027, transparent, transparent), url(ketocalcBackground.jpg); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
    /*background-image: linear-gradient(black, transparent), url(KetoCalcBackground.jpg);*/
    height: 100vh;
    background-position: top;
