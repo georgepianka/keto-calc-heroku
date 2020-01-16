@@ -108,6 +108,11 @@ class Home extends Component {
 
                           </Route>
 
+                          <Route exact path='/welcome'> component={Welcome}/>
+                            {loggedIn ? <Redirect to='/calendar/days'/> : < Welcome />}
+
+                          </Route>
+
                           { loggedIn ?
                             <>
                             <Route path='/log' render={props => {
@@ -125,7 +130,6 @@ class Home extends Component {
                             :
                             <>
 
-                            <Route exact path='/welcome' component={Welcome}/>
                             <Route exact path='/login' render={props => (
                               <UserForm isSignup={false} userFormSubmit= {this.props.login} {...props}/>
                             )}/>
