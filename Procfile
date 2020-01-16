@@ -1,1 +1,1 @@
-web: bundle exec thin start --ssl -p 3001
+web: bundle exec thin start --ssl
